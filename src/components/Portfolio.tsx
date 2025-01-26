@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Portfolio() {
   return (
     <section id="portfolio" className="bg-white py-16 sm:py-24 px-4 sm:px-8">
@@ -15,10 +17,13 @@ export default function Portfolio() {
             key={index}
             className="h-[200px] sm:h-[250px] lg:h-[300px] bg-gray-200 rounded-lg flex items-center justify-center shadow hover:scale-105 transition-transform duration-300"
           >
-            <img
+            <Image
               src={`/images/${image}`}
               alt={`Portfolio Image ${index + 1}`}
+              height={500}
+              width={500}
               className="w-full h-full object-cover rounded-lg"
+              priority
             />
           </div>
         ))}
